@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_02_141650) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_04_180545) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,36 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_02_141650) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.datetime "measured_at"
+    t.float "air_temperature"
+    t.float "dewpoint_temperature"
+    t.float "wet_bulb_temperature"
+    t.float "wind_chill_temperature"
+    t.float "relative_humidity"
+    t.float "absolute_humidity"
+    t.float "humidity_mixing_ratio"
+    t.float "relative_air_pressure"
+    t.float "absolute_air_pressure"
+    t.float "air_density"
+    t.float "specific_enthalpy"
+    t.float "wind_speed"
+    t.float "wind_direction"
+    t.float "wind_direction_corrected"
+    t.float "wind_direction_standard_deviation"
+    t.float "wind_value_quality"
+    t.float "compass_heading"
+    t.float "precipitation"
+    t.float "precipitation_intensity"
+    t.integer "precipitation_type"
+    t.float "rain_drop_volume"
+    t.float "wind_sensor_heating"
+    t.float "precipitation_sensor_heating"
+    t.float "supply_voltage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
