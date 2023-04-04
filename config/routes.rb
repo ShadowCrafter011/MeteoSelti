@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  defaults format: :json do
+    put "api/create", to: "api#create"
+    post "api/:id/attach_image", to: "api#attach_image"
+  end
 end
