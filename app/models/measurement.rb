@@ -3,6 +3,7 @@ require "date"
 class Measurement < ApplicationRecord
     has_one_attached :sky_capture
 
+    # 24 total measurements
     MEASUREMENT_KEYS = [
         :air_temperature, 
         :dewpoint_temperature, 
@@ -33,12 +34,18 @@ class Measurement < ApplicationRecord
     def set_measured_at unix_timestamp
         self.measured_at = Time.at(unix_timestamp.to_f).to_datetime
     end
-
+    
     def get_errors
         errors = []
         self.errors.objects.each do |error|
             errors.append error.full_message
         end
         return errors
+    end
+
+    def self.measurement_name symbol
+        words = symbol.to_s.split "_"
+        words[0] = words[0].capitalize
+        words.join " "
     end
 end

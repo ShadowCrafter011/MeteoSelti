@@ -1,0 +1,39 @@
+<%= link_to root_path, class: "position-absolute title d-block text-center", style: "width: 150px; top: 10px; left: 10px" do %>
+    <h3 class="m-0">Back</h3>
+<% end %>
+
+<div class="container my-5 title" style="max-width: 1000px">
+    <h1 class="text-center">Measured <%= distance_of_time_in_words(Time.now - @measurement.measured_at) %> ago</h1>
+    <div class="row">
+        <% for y in 0..2 do %>
+            <div class="col-4">
+                <table class="table blue-text">
+                    <thead>
+                        <tr>
+                            <th scope="col">Measurement</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for x in 0..@per_col - 1 do %>
+                            <% index = y * @per_col + x %>
+                            <tr>
+                                <td><%= Measurement::measurement_name Measurement::MEASUREMENT_KEYS[index] %></td>
+                                <td><%= @measurement[Measurement::MEASUREMENT_KEYS[index]].round(2) %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        <% end %>
+    </div>
+    <hr>
+    <div class="text-center mb-2">
+        <h1 class="my-3">Image</h1>
+        <% if @measurement.sky_capture.attached? %>
+            <%= image_tag @measurement.sky_capture, width: "98.5%" %>
+        <% else %>
+            <h3 class="text-center">Image not available yet</h3>
+        <% end %>
+    </div>
+</div>
