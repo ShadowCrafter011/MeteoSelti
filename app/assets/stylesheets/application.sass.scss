@@ -1,10 +1,4 @@
 // Entry point for your Sass build
 @import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "./link_card.sass.scss";
-
-body {
-    background-image: url("background.jpg");
-    background-size: 100vw 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
+@import "./background.sass.scss";

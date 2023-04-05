@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "measurement#list"
+  root "home#index"
 
   defaults format: :json do
     put "api/create", to: "api#create"

@@ -1,6 +1,4 @@
-<%= link_to root_path, class: "position-absolute title d-block text-center", style: "width: 150px; top: 10px; left: 10px" do %>
-    <h3 class="m-0">Back</h3>
-<% end %>
+<%= render partial: "partials/back_button", locals: { text: "Back", path: measurements_path } %>
 
 <div class="container my-5 title" style="max-width: 1000px">
     <h1 class="text-center">Measured <%= distance_of_time_in_words(Time.now - @measurement.measured_at) %> ago</h1>

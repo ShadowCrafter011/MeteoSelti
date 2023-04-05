@@ -1,3 +1,5 @@
+<%= render partial: "partials/back_button", locals: { text: "Back", path: root_path } %>
+
 <div class="container text-center" style="max-width: 1000px">
     <h1 class="mt-4 title">All measurements</h1>
     <% for y in 0..@rows - 1 do %>
