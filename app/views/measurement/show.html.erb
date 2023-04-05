@@ -16,7 +16,8 @@
                         <% for x in 0..@per_col - 1 do %>
                             <% index = y * @per_col + x %>
                             <tr>
-                                <td><%= Measurement::measurement_name Measurement::MEASUREMENT_KEYS[index] %></td>
+                                <% name = Measurement::measurement_name Measurement::MEASUREMENT_KEYS[index] %>
+                                <td class="text-truncate" title="<%= name %>"><%= name %></td>
                                 <td><%= @measurement[Measurement::MEASUREMENT_KEYS[index]].round(2) %></td>
                             </tr>
                         <% end %>
