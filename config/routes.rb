@@ -8,4 +8,7 @@ Rails.application.routes.draw do
 
   get "measurements", to: "measurement#list", as: "measurements"
   get "measurement/:id", to: "measurement#show", as: "measurement"
+
+  get "graphs", to: "graph#list", as: "graphs"
+  get "graph/:measurement", to: "graph#show", as: "graph"
 end
