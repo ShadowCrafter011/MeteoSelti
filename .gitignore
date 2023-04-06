@@ -7,6 +7,9 @@
 # Ignore the .env file
 .env
 
+# Ignore GSC credentials file
+config/meteoselti-gcs-credentials.json
+
 # Ignore bundler config.
 /.bundle
 
