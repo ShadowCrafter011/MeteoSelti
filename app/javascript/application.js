@@ -1,4 +1,6 @@
-// Entry point for the build script in your package.json
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
-import "chartkick/chart.js"
-import "./controllers"
+import "controllers"
+import "bootstrap"
+import "chartkick"
+import "Chart.bundle"
