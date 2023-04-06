@@ -1,0 +1,15 @@
+<%= render partial: "partials/back_button", locals: { text: "Back", path: graphs_path } %>
+
+<div class="container text-center">
+    <h1 class="title my-4">Graphs for <%= @name %></h1>
+    <div class="row">
+        <div class="col-12">
+            <% @timeframes.each do |title, data| %>
+                <div class="title my-2">
+                    <h3><%= title %></h3>
+                    <%= line_chart Measurement::data_for(data[:measurements], @key), points: data[:points] %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

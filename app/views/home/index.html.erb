@@ -1,12 +1,17 @@
 <div class="w-100 d-flex justify-content-center align-items-center" style="height: 80vh">
     <div class="container" style="max-width: 1200px">
         <div class="row text-center justify-content-around" style="height: 300px">
-            <%= link_to root_path, class: "col-4 title h-100 me-5" do %>
+            <%= link_to graphs_path, class: "col-4 title h-100 me-5" do %>
                 <h3>Graphs</h3>
+                <%= line_chart Measurement::data_for(Measurement::created_at_most(24.hour.ago), :air_temperature), height: "240px", points: false, ytitle: "Temperature (°C)" %>
             <% end %>
             <%= link_to measurements_path, class: "col-4 title h-100 me-5" do %>
                 <h3>Measurements</h3>
-                <%= image_tag @last_measurement.sky_capture, class: "mt-3", width: "95%", style: "border: 2px solid #001b9f; border-radius: 5px" %>
+                <% if @last_measurement.sky_capture.attached? %>
+                    <%= image_tag @last_measurement.sky_capture, class: "mt-3", width: "95%", style: "border: 2px solid #001b9f; border-radius: 5px" %>
+                <% else %>
+                    No image attached
+                <% end %>
             <% end %>
         </div>
     </div>

@@ -43,6 +43,18 @@ class Measurement < ApplicationRecord
         return errors
     end
 
+    def self.created_at_most time
+        Measurement.where("measured_at > ?", time)
+    end
+
+    def self.data_for measurements=Measurement.all, measurement
+        data = {}
+        measurements.each do |m|
+            data[m.measured_at] = m[measurement].round(3)
+        end
+        return data
+    end
+
     def self.measurement_name symbol
         words = symbol.to_s.split "_"
         words[0] = words[0].capitalize
