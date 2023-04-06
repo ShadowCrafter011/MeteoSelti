@@ -2,6 +2,10 @@ class ApiController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :validate_bearer_token
   
+  def ping
+    render json: {success: true}
+  end
+
   def create
     measurement = Measurement.new measurement_params.except(:measured_at)
     measurement.set_measured_at measurement_params[:measured_at]
@@ -23,7 +27,7 @@ class ApiController < ApplicationController
 
   private
   def measurement_params
-    params.require(:measurement).permit(:measured_at, Measurement::MEASUREMENT_KEYS)
+    params.require(:measurement).permit(:measured_at, :sky_capture, Measurement::MEASUREMENT_KEYS)
   end
 
   def validate_bearer_token
