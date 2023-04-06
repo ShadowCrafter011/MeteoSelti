@@ -7,7 +7,11 @@
             <% end %>
             <%= link_to measurements_path, class: "col-4 title h-100 me-5" do %>
                 <h3>Measurements</h3>
-                <%= image_tag @last_measurement.sky_capture, class: "mt-3", width: "95%", style: "border: 2px solid #001b9f; border-radius: 5px" %>
+                <% if @last_measurement.sky_capture.attached? %>
+                    <%= image_tag @last_measurement.sky_capture, class: "mt-3", width: "95%", style: "border: 2px solid #001b9f; border-radius: 5px" %>
+                <% else %>
+                    No image attached
+                <% end %>
             <% end %>
         </div>
     </div>
