@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   root "home#index"
 
-  defaults format: :json do
-    put "api/create", to: "api#create"
-    post "api/:id/attach_image", to: "api#attach_image"
+    defaults format: :json do
+      namespace :api do
+        scope :upload do
+          put "measurement", to: "measurement#create"
+          post "image", to: "measurement#image"
+        end
 
-    get "api/ping", to: "api#ping"
-  end
+        get "ping", to: "api#ping"
+      end
+    end
 
   get "measurements", to: "measurement#list", as: "measurements"
   get "measurement/:id", to: "measurement#show", as: "measurement"
