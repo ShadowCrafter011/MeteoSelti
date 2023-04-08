@@ -18,7 +18,12 @@
                             <tr>
                                 <% name = Measurement::measurement_name Measurement::MEASUREMENT_KEYS[index] %>
                                 <td class="text-truncate" title="<%= name %>"><%= name %></td>
-                                <td><%= @measurement[Measurement::MEASUREMENT_KEYS[index]].round(2) %></td>
+                                <% data = @measurement[Measurement::MEASUREMENT_KEYS[index]] %>
+                                <% if data.present? %>
+                                    <td><%= data.round(2) %></td>
+                                <% else %>
+                                    <td>NaN</td>
+                                <% end %>
                             </tr>
                         <% end %>
                     </tbody>

@@ -50,7 +50,12 @@ class Measurement < ApplicationRecord
     def self.data_for measurements=Measurement.all, measurement
         data = {}
         measurements.each do |m|
-            data[m.measured_at] = m[measurement].round(3)
+            if m[measurement].present?
+                data[m.measured_at] = m[measurement].round(3)
+            else
+                # TODO: See if nil or something like NaN is an option
+                data[m.measured_at] = 0
+            end
         end
         return data
     end
