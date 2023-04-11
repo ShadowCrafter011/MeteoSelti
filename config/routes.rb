@@ -8,6 +8,10 @@ Rails.application.routes.draw do
           post "image", to: "measurement#image"
         end
 
+        scope :measurement do
+          get "last/at", to: "measurement#last_measured_at"
+        end
+
         get "ping", to: "api#ping"
       end
     end

@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-    def validate_bearer_token
-        render json: {success: false, message: "Invalid bearer token"}, status: :unauthorized unless request.headers["Authorization"] == ENV["BEARER_TOKEN"]
+    before_action :require_https!
+
+    def require_https!
+        redirect_to :protocol => "https://" unless (request.ssl? || request.local?)
     end
 end

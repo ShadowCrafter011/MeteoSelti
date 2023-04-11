@@ -108,6 +108,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     ffi (1.15.5)
+    ffi (1.15.5-x64-mingw-ucrt)
     globalid (1.1.0)
       activesupport (>= 5.0)
     google-apis-core (0.11.0)
@@ -183,10 +184,13 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.14.2-x64-mingw-ucrt)
+      racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
     os (1.1.4)
     pg (1.4.6)
+    pg (1.4.6-x64-mingw-ucrt)
     popper_js (2.11.6)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -269,6 +273,8 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2023.3)
+      tzinfo (>= 1.0.0)
     uber (0.1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
@@ -289,6 +295,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
+  x64-mingw-ucrt
   x86_64-linux
 
 DEPENDENCIES
