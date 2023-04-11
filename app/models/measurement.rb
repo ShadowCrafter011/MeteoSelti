@@ -52,9 +52,6 @@ class Measurement < ApplicationRecord
         measurements.each do |m|
             if m[measurement].present?
                 data[m.measured_at] = m[measurement].round(3)
-            else
-                # TODO: See if nil or something like NaN is an option
-                data[m.measured_at] = 0
             end
         end
         return data
