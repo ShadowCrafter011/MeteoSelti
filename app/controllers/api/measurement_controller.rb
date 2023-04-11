@@ -27,7 +27,7 @@ class Api::MeasurementController < ApplicationController
     render json: {
       success: true,
       meassage: "Last measurement found",
-      timstamp: Measurement.last.measured_at.to_i
+      timestamp: Measurement.last.measured_at.to_i
     } if Measurement.last.present?
   end
 
