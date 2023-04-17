@@ -9,7 +9,15 @@ Rails.application.routes.draw do
         end
 
         scope :measurement do
-          get "last/at", to: "measurement#last_measured_at"
+          scope :last do
+            get "at", to: "measurement#last_measured_at"
+          end
+        end
+
+        scope :measurements do
+          scope :last do
+            get ":amount", to: "measurement#last"
+          end
         end
 
         get "ping", to: "api#ping"

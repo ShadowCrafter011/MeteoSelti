@@ -23,6 +23,10 @@ class Api::MeasurementController < ApplicationController
     end
   end
 
+  def last
+    render json: Measurement.last(params[:amount]).to_json(except: :id)
+  end
+
   def last_measured_at
     render json: {
       success: true,
