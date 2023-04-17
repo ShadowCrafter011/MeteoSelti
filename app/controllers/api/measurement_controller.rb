@@ -31,6 +31,10 @@ class Api::MeasurementController < ApplicationController
     } if Measurement.last.present?
   end
 
+  def last
+    render json: Measurement.last(params[:amount]).to_json(except: :id)
+  end
+
   private
   def measurement_params
     params.require(:measurement).permit(:measured_at, :sky_capture, Measurement::MEASUREMENT_KEYS)
