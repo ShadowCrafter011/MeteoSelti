@@ -7,6 +7,8 @@ gem "chartkick"
 
 gem "bootstrap"
 
+gem "httparty"
+
 gem "google-cloud-storage", "~> 1.11", require: false
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
