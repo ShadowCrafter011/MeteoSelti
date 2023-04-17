@@ -2,18 +2,11 @@
 
 <div class="container text-center" style="max-width: 1000px">
     <h1 class="mt-4 title">All measurements</h1>
-    <% for y in 0..@rows - 1 do %>
-        <div class="row">
-            <% for x in 0..2 do %>
-                <% unless (index = y * 3 + x) >= @measurements.length %>
-                    <div class="col-4">
-                        <% current = @measurements[index] %>
-                        <%= link_to measurement_path(current), class: "link-card" do %>
-                            <%= distance_of_time_in_words(Time.now - current.measured_at) %> ago
-                        <% end %>
-                    </div>
-                <% end %>
-            <% end %>
-        </div>
+    <% for frame in 0..@frames - 1 do %>
+        <turbo-frame id="measurement-frame-<%= frame %>" src="/frames/measurements/<%= frame %>" loading="lazy" target="_top">
+            <div class="d-flex justify-content-center align-items-center" style="height: 500px">
+                <div class="m-5 spinner-grow text-success"></div>
+            </div>
+        </turbo-frame>
     <% end %>
 </div>

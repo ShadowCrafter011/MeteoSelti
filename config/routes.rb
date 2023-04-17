@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :frames do
+    get "measurements/:frame_id", to: "measurement#list"
+  end
+
   get "measurements", to: "measurement#list", as: "measurements"
   get "measurement/:id", to: "measurement#show", as: "measurement"
 

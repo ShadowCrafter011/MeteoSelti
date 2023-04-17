@@ -31,6 +31,8 @@ class Measurement < ApplicationRecord
         :supply_voltage
     ]
 
+    FRAME_COLUMNS = 15
+
     def set_measured_at unix_timestamp
         self.measured_at = Time.at(unix_timestamp.to_f).to_datetime
     end

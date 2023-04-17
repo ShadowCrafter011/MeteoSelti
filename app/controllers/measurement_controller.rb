@@ -1,7 +1,8 @@
 class MeasurementController < ApplicationController
   def list
-    @measurements = Measurement.order measured_at: :desc
-    @rows = (@measurements.length / 3.0).ceil
+    @per_frame = (3 * Measurement::FRAME_COLUMNS).to_f
+    @total = Measurement.count.to_f
+    @frames = (@total / @per_frame).ceil
   end
 
   def show
