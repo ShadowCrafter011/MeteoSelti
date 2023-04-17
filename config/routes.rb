@@ -15,6 +15,8 @@ Rails.application.routes.draw do
         end
 
         scope :measurements do
+          get "/", to: "measurement#all"
+
           scope :last do
             get ":amount", to: "measurement#last"
           end
