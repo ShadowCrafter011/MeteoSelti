@@ -1,4 +1,5 @@
 class Api::MeasurementController < ApplicationController
+  include ActionView::Helpers::DateHelper
   include ApiUtils
   
   protect_from_forgery with: :null_session
@@ -9,6 +10,14 @@ class Api::MeasurementController < ApplicationController
     measurement.set_measured_at measurement_params[:measured_at]
     if measurement.save
       render json: {success: true, message: "Measurement created", id: measurement.id, measured_at: measurement.measured_at}, status: :created
+      
+      ActionCable.server.broadcast("measurement", {
+        action: "new",
+        id: measurement.id,
+        total: Measurement.count,
+        per_frame: Measurement::FRAME_COLUMNS * 3
+      })
+
     else
       render json: {success: false, meassage: "Measurement could not be created", errors: measurement.get_errors}, status: :unprocessable_entity
     end

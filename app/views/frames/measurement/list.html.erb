@@ -5,7 +5,7 @@
                 <% unless (index = y * 3 + x) >= @measurements.length %>
                     <div class="col-4">
                         <% current = @measurements[index] %>
-                        <%= link_to measurement_path(current), class: "link-card" do %>
+                        <%= link_to measurement_path(current), id: index + @offset,class: "link-card" do %>
                             <%= distance_of_time_in_words(Time.now - current.measured_at) %> ago
                         <% end %>
                     </div>

@@ -2,11 +2,10 @@
 
 <div class="container text-center" style="max-width: 1000px">
     <h1 class="mt-4 title">All measurements</h1>
-    <% for frame in 0..@frames - 1 do %>
-        <turbo-frame id="measurement-frame-<%= frame %>" src="/frames/measurements/<%= frame %>" loading="lazy" target="_top">
-            <div class="d-flex justify-content-center align-items-center" style="height: 500px">
-                <div class="m-5 spinner-grow text-success"></div>
-            </div>
-        </turbo-frame>
-    <% end %>
+    <div id="measurements" data-controller="measurement">
+        <% for frame in 0..@frames -1 do %>
+            <%= render partial: "list_frame", locals: { frame: frame } %>
+        <% end %>
+        <%= render partial: "list_frame", locals: { frame: "empty" } %>
+    </div>
 </div>
