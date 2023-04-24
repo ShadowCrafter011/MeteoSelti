@@ -62,8 +62,6 @@ class Measurement < ApplicationRecord
     end
 
     def self.measurement_name symbol
-        words = symbol.to_s.split "_"
-        words[0] = words[0].capitalize
-        words.join " "
+        I18n.t "general.measurements.#{symbol.to_s}"
     end
 end

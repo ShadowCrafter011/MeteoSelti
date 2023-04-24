@@ -1,4 +1,6 @@
 class MeasurementController < ApplicationController
+  before_action -> { setup_locale "measurement" }
+  
   def list
     @per_frame = (3 * Measurement::FRAME_COLUMNS).to_f
     @total = Measurement.count.to_f

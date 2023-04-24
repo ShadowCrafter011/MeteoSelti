@@ -1,4 +1,6 @@
 class GraphController < ApplicationController
+  before_action -> { setup_locale "graph" }
+
   def list
     @rows = (Measurement::MEASUREMENT_KEYS.length / 4.0).ceil
   end
