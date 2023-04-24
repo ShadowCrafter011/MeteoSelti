@@ -10,7 +10,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body id="<%= controller_name %>-<%= action_name %>">
+  <body id="<%= controller_name %>-<%= action_name %>" data-controller="feather">
+    <%= render partial: "layouts/navbar" %>
+
     <%= yield %>
   </body>
 </html>

@@ -5,8 +5,6 @@ ruby "3.1.2"
 
 gem "chartkick"
 
-gem "bootstrap"
-
 gem "httparty"
 
 gem "google-cloud-storage", "~> 1.11", require: false
