@@ -11,15 +11,20 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="fs-5">Seiten</span>
+            <span class="fs-5"><%= tg "navbar.pages" %></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<%= root_path %>">Homepage</a></li>
-            <li><a class="dropdown-item" href="<%= measurements_path %>">Alle Messungen</a></li>
-            <li><a class="dropdown-item" href="<%= graphs_path %>">Graphen</a></li>
+            <li><a class="dropdown-item" href="<%= root_path %>"><%= tg "navbar.homepage" %></a></li>
+            <li><a class="dropdown-item" href="<%= measurements_path %>"><%= tg "navbar.measurements" %></a></li>
+            <li><a class="dropdown-item" href="<%= graphs_path %>"><%= tg "navbar.graphs" %></a></li>
           </ul>
         </li>
       </ul>
+
+      <button data-controller="toast" data-action="toast#show" data-toast-id="language-toast" class="btn" title="<%= tg "navbar.language_switch_title" %>">
+        <i data-feather="globe"></i>
+      </button>
+
       <!--
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
