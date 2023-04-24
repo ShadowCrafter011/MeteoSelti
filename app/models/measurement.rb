@@ -3,7 +3,7 @@ require "date"
 class Measurement < ApplicationRecord
     has_one_attached :sky_capture
 
-    # 24 total measurements
+    # 26 total measurements
     MEASUREMENT_KEYS = [
         :air_temperature, 
         :dewpoint_temperature, 
@@ -17,7 +17,9 @@ class Measurement < ApplicationRecord
         :air_density,
         :specific_enthalpy,
         :wind_speed,
+        :max_wind_speed,
         :wind_direction,
+        :max_wind_direction,
         :wind_direction_corrected,
         :wind_direction_standard_deviation,
         :wind_value_quality,

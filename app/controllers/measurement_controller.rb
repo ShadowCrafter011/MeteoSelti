@@ -7,6 +7,6 @@ class MeasurementController < ApplicationController
 
   def show
     @measurement = Measurement.find params[:id]
-    @per_col = Measurement::MEASUREMENT_KEYS.length / 3
+    @per_col = (Measurement::MEASUREMENT_KEYS.length / 3.0).ceil
   end
 end

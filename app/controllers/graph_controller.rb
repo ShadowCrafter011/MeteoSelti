@@ -1,6 +1,6 @@
 class GraphController < ApplicationController
   def list
-    @per_col = Measurement::MEASUREMENT_KEYS.length / 4
+    @rows = (Measurement::MEASUREMENT_KEYS.length / 4.0).ceil
   end
 
   def show

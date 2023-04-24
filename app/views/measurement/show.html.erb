@@ -15,6 +15,7 @@
                     <tbody>
                         <% for x in 0..@per_col - 1 do %>
                             <% index = y * @per_col + x %>
+                            <% next if index >= Measurement::MEASUREMENT_KEYS.length %>
                             <tr>
                                 <% name = Measurement::measurement_name Measurement::MEASUREMENT_KEYS[index] %>
                                 <td class="text-truncate" title="<%= name %>"><%= name %></td>
