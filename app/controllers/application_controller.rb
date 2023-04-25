@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
     end
 
     def switch_locale(&action)
-        locale = cookies[:locale].to_sym || I18n.default_locale
+        locale = (cookies[:locale] || I18n.default_locale).to_sym
+        locale = I18n.default_locale unless I18n.available_locales.include? locale
         I18n.with_locale(locale, &action)
     end
 
