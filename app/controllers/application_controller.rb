@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
     before_action :require_https!
+    around_action :switch_locale
 
     def require_https!
         redirect_to :protocol => "https://" unless (request.ssl? || request.local? || Rails.env == "development" || Rails.env == "test")
+    end
+
+    def switch_locale(&action)
+        locale = cookies[:locale].to_sym || I18n.default_locale
+        I18n.with_locale(locale, &action)
     end
 
     def tp(attribute, replace=nil, html_safe=false)

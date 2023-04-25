@@ -1,12 +1,40 @@
-<div class="position-fixed w-100 d-flex justify-content-center align-items-center pe-none sticky-top" style="height: 70vh">
-    <div id="language-toast" class="toast bg-white" data-bs-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
+<div id="language-toast-container" class="position-fixed w-100 d-flex justify-content-center align-items-center pe-none sticky-top">
+    <div id="language-toast" class="toast bg-light" data-bs-autohide="false" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header">
             <i data-feather="globe"></i>
             <strong class="me-auto fs-5 ps-2"><%= tg "language_toast.title" %></strong>
             <button type="button" class="btn-close pe-2" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>
         <div class="toast-body">
-            Hello, world! This is a toast message.
+            <div class="container-fluid">
+                <div class="row">
+                    <% languages = {
+                        "german": {
+                            flag: "germany.jpg",
+                            href: language_change_path("de", p: request.path)
+                        },
+                        "french": {
+                            flag: "france.jpg",
+                            href: language_change_path("fr", p: request.path)
+                        },
+                        "italian": {
+                            flag: "italy.jpg",
+                            href: language_change_path("it", p: request.path)
+                        },
+                        "english": {
+                            flag: "england.jpg",
+                            href: language_change_path("en", p: request.path)
+                        }
+                    } %>
+
+                    <% languages.each do |name, data| %>
+                        <a class="col-md-3 text-center" href="<%= data[:href] %>">
+                            <h3><%= tg("languages.#{name}") %></h3>
+                            <%= image_tag "flags/#{data[:flag]}", class: "flag-image", width: "180px" %>
+                        </a>
+                    <% end %>
+                </div>
+            </div>
         </div>
     </div>
 </div>

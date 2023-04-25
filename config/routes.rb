@@ -35,4 +35,6 @@ Rails.application.routes.draw do
 
   get "graphs", to: "graph#list", as: "graphs"
   get "graph/:measurement", to: "graph#show", as: "graph"
+
+  get "language/:locale", to: "language#change", as: "language_change"
 end
