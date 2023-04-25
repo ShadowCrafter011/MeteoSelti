@@ -19,7 +19,7 @@ de:
       wind_direction_corrected: Korrigierte Windrichtung
       wind_direction_standard_deviation: Standardabweichung der Windrichtung
       wind_value_quality: Windmessungsqualität
-      compass_heading: Compass Ausrichtung
+      compass_heading: Kompass Ausrichtung
       precipitation: Niederschlag
       precipitation_intensity: Niederschlagsstärke
       precipitation_type: Niederschlagstyp
