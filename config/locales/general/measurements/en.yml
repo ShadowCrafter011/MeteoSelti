@@ -1,0 +1,29 @@
+en:
+  general:
+    measurements:
+      air_temperature: Air temperature
+      dewpoint_temperature: Dew point temperature
+      wet_bulb_temperature: Wet bulb temperature
+      wind_chill_temperature: Wind cooling temperature
+      relative_humidity: Relative humidity
+      absolute_humidity: Absolute humidity
+      humidity_mixing_ratio: Moisture Mixing Ratio
+      relative_air_pressure: Relative air pressure
+      absolute_air_pressure: Absolute air pressure
+      air_density: Air density
+      specific_enthalpy: Specific enthalpy
+      wind_speed: Wind speed
+      max_wind_speed: Maximum wind speed
+      wind_direction: Wind direction
+      max_wind_direction: Wind direction for maximum wind speed
+      wind_direction_corrected: Corrected wind direction
+      wind_direction_standard_deviation: Standard deviation of the wind direction
+      wind_value_quality: Wind measurement quality
+      compass_heading: Compass Alignment
+      precipitation: Precipitation
+      precipitation_intensity: Rainfall intensity
+      precipitation_type: Precipitation type
+      rain_drop_volume: Volume raindrops
+      wind_sensor_heating: Heating wind sensor
+      precipitation_sensor_heating: Heating rain radar
+      supply_voltage: Supply voltage

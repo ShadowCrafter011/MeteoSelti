@@ -1,0 +1,8 @@
+it:
+  general:
+    navbar:
+      language_switch_title: Cambiare la lingua
+      pages: Pagine
+      homepage: Homepage
+      measurements: Tutte le misure
+      graphs: Grafici

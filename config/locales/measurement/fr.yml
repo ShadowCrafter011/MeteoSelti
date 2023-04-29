@@ -1,0 +1,6 @@
+fr:
+  measurement:
+    list:
+      measurements: Toutes les mesures
+    show:
+      measurement_from: Mesure du

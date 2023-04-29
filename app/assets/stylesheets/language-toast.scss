@@ -1,5 +1,24 @@
 #language-toast {
     max-width: 1000px;
     width: 100%;
-    cursor: crosshair;
+    
+    min-height: 250px;
+}
+
+#language-toast a {
+    text-decoration: none;
+    color: black;
+}
+
+#language-toast a:hover {
+    color: black;
+}
+
+#language-toast-container {
+    height: 70vh;
+}
+
+.flag-image {
+    border: 2px solid #e3f2fd;
+    border-radius: 5px;
 }

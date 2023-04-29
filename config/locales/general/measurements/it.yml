@@ -1,0 +1,29 @@
+it:
+  general:
+    measurements:
+      air_temperature: Temperatura dell'aria
+      dewpoint_temperature: Temperatura del punto di rugiada
+      wet_bulb_temperature: Temperatura di bulbo umido
+      wind_chill_temperature: Temperatura di raffreddamento del vento
+      relative_humidity: Umidità relativa
+      absolute_humidity: Umidità assoluta
+      humidity_mixing_ratio: Rapporto di miscelazione dell'umidità
+      relative_air_pressure: Pressione relativa dell'aria
+      absolute_air_pressure: Pressione assoluta dell'aria
+      air_density: Ermetico
+      specific_enthalpy: Entalpia specifica
+      wind_speed: Velocità del vento
+      max_wind_speed: Velocità massima del vento
+      wind_direction: Direzione del vento
+      max_wind_direction: Direzione del vento per la velocità massima del vento
+      wind_direction_corrected: Direzione del vento corretta
+      wind_direction_standard_deviation: Deviazione standard della direzione del vento
+      wind_value_quality: Qualità della misurazione del vento
+      compass_heading: Allineamento della bussola
+      precipitation: Precipitazioni
+      precipitation_intensity: Intensità delle precipitazioni
+      precipitation_type: Tipo di precipitazione
+      rain_drop_volume: Volume gocce di pioggia
+      wind_sensor_heating: Sensore del vento di riscaldamento
+      precipitation_sensor_heating: Riscaldamento del radar della pioggia
+      supply_voltage: Tensione di alimentazione

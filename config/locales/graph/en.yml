@@ -1,0 +1,9 @@
+en:
+  graph:
+    list:
+      graphs: Graphs for different measurements
+    show:
+      graph_for: Graph for
+      last_hour: Last hour
+      last_day: Last day
+      since_start: Since the start of the measurements

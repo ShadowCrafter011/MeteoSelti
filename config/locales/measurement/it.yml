@@ -1,0 +1,6 @@
+it:
+  measurement:
+    list:
+      measurements: Tutte le misure
+    show:
+      measurement_from: Misura da
