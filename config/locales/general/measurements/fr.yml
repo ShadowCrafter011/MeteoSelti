@@ -1,0 +1,29 @@
+fr:
+  general:
+    measurements:
+      air_temperature: Température de l'air
+      dewpoint_temperature: Température du point de rosée
+      wet_bulb_temperature: Température de bulbe humide
+      wind_chill_temperature: Température de refroidissement éolien
+      relative_humidity: Humidité relative
+      absolute_humidity: Humidité absolue
+      humidity_mixing_ratio: Humidité Rapport de mélange
+      relative_air_pressure: Pression atmosphérique relative
+      absolute_air_pressure: Pression atmosphérique absolue
+      air_density: Densité de l'air
+      specific_enthalpy: Enthalpie spécifique
+      wind_speed: Vitesse du vent
+      max_wind_speed: Vitesse maximale du vent
+      wind_direction: Direction du vent
+      max_wind_direction: Direction du vent pour la vitesse maximale du vent
+      wind_direction_corrected: Direction du vent corrigée
+      wind_direction_standard_deviation: Écart-type de la direction du vent
+      wind_value_quality: Qualité des mesures de vent
+      compass_heading: Orientation de la boussole
+      precipitation: Précipitations
+      precipitation_intensity: Intensité des précipitations
+      precipitation_type: Type de précipitations
+      rain_drop_volume: Volume des gouttes de pluie
+      wind_sensor_heating: Chauffage Capteur de vent
+      precipitation_sensor_heating: Chauffage Radar de pluie
+      supply_voltage: Tension d'alimentation

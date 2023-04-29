@@ -1,0 +1,47 @@
+it:
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: circa %{count} ora
+        other: circa %{count} ore
+      about_x_months:
+        one: circa %{count} mese
+        other: circa %{count} mesi
+      about_x_years:
+        one: circa %{count} anno
+        other: circa %{count} anni
+      almost_x_years:
+        one: quasi %{count} anno
+        other: quasi %{count} anni
+      half_a_minute: mezzo minuto
+      less_than_x_seconds:
+        one: meno di %{count} secondi
+        other: meno %{count} secondi
+      less_than_x_minutes:
+        one: Meno di un minuto
+        other: meno %{count} minuti
+      over_x_years:
+        one: più di %{count} anno
+        other: più di %{count} anni
+      x_seconds:
+        one: "%{count} secondo"
+        other: "%{count} secondi"
+      x_minutes:
+        one: "%{conteggio} minuto"
+        other: "%{count} minuti"
+      x_days:
+        one: Tag %{count}
+        other: "%{conteggio} giorni"
+      x_months:
+        one: "%{count} Mese"
+        other: "%{count} mesi"
+      x_years:
+        one: "%{count} Anno"
+        other: "%{conteggio} anni"
+    prompts:
+      second: Secondo
+      minute: Minuto
+      hour: Ora
+      day: Giorno
+      month: Mese
+      year: Anno
