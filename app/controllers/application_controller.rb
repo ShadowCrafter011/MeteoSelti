@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
         I18n.with_locale(locale, &action)
     end
 
+    def title title
+        @title = title
+    end
+
     def tp(attribute, replace=nil, html_safe=false)
         translated = t("#{@locale[:path]}#{@locale[:action_override] ? "" : ".#{action_name}"}.#{attribute}")
         if replace == nil

@@ -1,8 +1,14 @@
 <div class="container my-5 title" style="max-width: 1000px">
-    <h1 class="text-center">Measured <%= distance_of_time_in_words(Time.now - @measurement.measured_at) %> ago</h1>
+    <h1 class="text-center">
+        <% if @measurement.measured_at.today? %>
+            <%= @measurement.measured_at.strftime("%H:%M") %>
+        <% else %>
+            <%= @measurement.measured_at.strftime("%d %B %Y - %H:%M") %>
+        <% end %>
+    </h1>
     <div class="row">
         <% for y in 0..2 do %>
-            <div class="col-4">
+            <div class="col-md-4">
                 <table class="table blue-text">
                     <thead>
                         <tr>
@@ -16,7 +22,7 @@
                             <% next if index >= Measurement::MEASUREMENT_KEYS.length %>
                             <tr>
                                 <% name = Measurement::measurement_name Measurement::MEASUREMENT_KEYS[index] %>
-                                <td class="text-truncate" title="<%= name %>"><%= name %></td>
+                                <td title="<%= name %>"><%= name %></td>
                                 <% data = @measurement[Measurement::MEASUREMENT_KEYS[index]] %>
                                 <% if data.present? %>
                                     <td><%= data.round(2) %></td>
