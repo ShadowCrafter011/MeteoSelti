@@ -1,0 +1,19 @@
+#home-index {
+    .contents {
+        display: grid;
+        grid-template: 
+            '. . . measurements'
+            '. . . measurements'
+            '. . . measurements'
+            '. . . .';
+
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 100px 100px 100px 100px;
+
+        gap: 10px 10px;
+    }
+
+    #last-measurements {
+        grid-area: measurements;
+    }
+}
