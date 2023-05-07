@@ -1,0 +1,1 @@
+web: bin/rails s -p ${PORT:-5000} -e $RAILS_ENV
