@@ -48,7 +48,11 @@ class Measurement < ApplicationRecord
     end
 
     def self.created_at_most time
-        Measurement.where("measured_at > ?", time)
+        Measurement.where("measured_at >= ?", time)
+    end
+
+    def self.created_today
+        Measurement.where("measured_at >= ?", Time.now.beginning_of_day)
     end
 
     def self.data_for measurements=Measurement.all, measurement
@@ -59,6 +63,14 @@ class Measurement < ApplicationRecord
             end
         end
         return data
+    end
+
+    def self.added_value measurements=Measurement.all, measurement
+        output = 0
+        measurements.each do |m|
+            output += m[measurement] if m[measurement].present?
+        end
+        return output
     end
 
     def self.measurement_name symbol

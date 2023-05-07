@@ -1,9 +1,51 @@
-<h1 class="text-center mt-4"><%= tp("welcome") %></h1>
+<div class="container">
+    <div class="contents">
 
-<div class="contents">
+        <div id="precipitation" class="measurement" title="<%= tp "today" %>">
+            <%= image_tag @precipitation_icon, height: "130px" %>
+            <h1 class="measurement-text precipitation-amount">
+                <%= @precipitation %><span class="fs-1">mm <%= tp "rain" %></span>
+            </h1>
+        </div>
 
-    <div id="last-measurements">
+        <div id="temperature" class="measurement" title="<%= tg "measurements.air_temperature" %>">
+            <%= image_tag @temperature_icon, height: "140px" %>
+            <h1 class="measurement-text <%= @temperature_class %>">
+                <%= @temperature.round(1) %>°C
+            </h1>
+        </div>
+
+        <div id="humidity" class="measurement" title="<%= tg "measurements.relative_humidity" %>">
+            <%= image_tag "icons/humidity.png", height: "130px" %>
+            <h1 class="measurement-text">
+                <%= @humidity.round(1) %>%
+            </h1>
+        </div>
+
+        <div id="wind" class="measurement" data-controller="compass" data-rotation="<%= @wind_direction %>">
+            <div class="compass-container" title="<%= tg "measurements.wind_direction" %>">
+                <%= image_tag "icons/compass.png", height: "130px" %>
+                <%= image_tag "icons/compass_inner.png", height: "50px", class: "compass-pointer", "data-compass-target": "pointer" %>
+            </div>
+            <h1 class="measurement-text" title="<%= tg "measurements.wind_speed" %>">
+                <%= @wind_speed.round(1) %>m/s
+            </h1>
+        </div>
+
+        <div id="pressure" class="measurement" title="<%= tg "measurements.absolute_air_pressure" %>">
+            <%= image_tag "icons/barometer.png", height: "130px" %>
+            <h1 class="measurement-text">
+                <%= @pressure.round(1) %>hPa
+            </h1>
+        </div>
+
+        <div id="last-measurements">
+            <h1 class="text-center my-4"><%= tp "last_measurements" %></h1>
+
+            <% @measurements.each do |m| %>
+                <%= render partial: "measurement", locals: { measurement: m } %>
+            <% end %>
+        </div>
 
     </div>
-
 </div>

@@ -2,3 +2,6 @@ it:
   home:
     index:
       welcome: Benvenuti a MeteoSelti!
+      rain: Pioggia
+      today: Oggi
+      last_measurements: Ultime misurazioni

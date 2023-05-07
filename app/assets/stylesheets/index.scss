@@ -1,19 +1,101 @@
 #home-index {
     .contents {
         display: grid;
-        grid-template: 
-            '. . . measurements'
-            '. . . measurements'
-            '. . . measurements'
-            '. . . .';
-
-        grid-template-columns: auto auto auto auto;
-        grid-template-rows: 100px 100px 100px 100px;
-
         gap: 10px 10px;
+
+        margin: 20px;
+        
+        @media only screen and (min-width: 1000px) {
+            grid-template: 
+                'precipitation precipitation measurements measurements'
+                'temperature temperature measurements measurements'
+                'humidity humidity measurements measurements'
+                'wind wind . .'
+                'pressure pressure . .';
+
+            grid-template-columns: 22% 22% auto auto;
+            grid-template-rows: 180px 180px 180px 180px 180px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            grid-template:
+                'precipitation precipitation'
+                'temperature temperature'
+                'humidity humidity'
+                'wind wind'
+                'pressure pressure'
+                'measurements measurements'
+                'measurements measurements'
+                'measurements measurements';
+
+            grid-template-columns: auto auto;
+            grid-template-rows: 180px 180px 180px 180px 180px;
+        }
+    }
+
+    .measurement {
+        display: flex;
+        align-items: center;
+
+        @media only screen and (max-width: 1000px) {
+            justify-content: center;
+        }
     }
 
     #last-measurements {
         grid-area: measurements;
+    }
+
+    #precipitation {
+        grid-area: precipitation;
+    }
+
+    #temperature {
+        grid-area: temperature;
+    }
+
+    #wind {
+        grid-area: wind;
+    }
+
+    #humidity {
+        grid-area: humidity;
+    }
+
+    #pressure {
+        grid-area: pressure;
+    }
+
+    .compass-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .compass-pointer {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .measurement-text {
+        font-size: 5rem;
+        margin-left: 30px;
+    }
+
+    .precipitation-amount {
+        color: royalblue;
+    }
+
+    .normal {
+        color: teal;
+    }
+
+    .hot {
+        color: darkred;
+    }
+
+    .cold {
+        color: lightskyblue;
     }
 }

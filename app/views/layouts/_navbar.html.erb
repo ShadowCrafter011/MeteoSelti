@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg p-0" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="<%= root_path %>">
-        <i class="bi bi-cloudy-fill" style="font-size: 2rem"></i><h3 class="m-0 ps-2">MeteoSelti</h3>
-    </a>
+    <%= link_to root_path, class: "navbar-brand d-flex align-items-center" do %>
+      <i class="bi bi-cloudy-fill" style="font-size: 2rem"></i><h3 class="m-0 ps-2">MeteoSelti</h3>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,9 +14,10 @@
             <span class="fs-5"><%= tg "navbar.pages" %></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<%= root_path %>"><%= tg "navbar.homepage" %></a></li>
-            <li><a class="dropdown-item" href="<%= measurements_path %>"><%= tg "navbar.measurements" %></a></li>
-            <li><a class="dropdown-item" href="<%= graphs_path %>"><%= tg "navbar.graphs" %></a></li>
+            <li><%= link_to tg("navbar.homepage"), root_path, class: "dropdown-item" %></li>
+            <li><%= link_to tg("navbar.measurements"), measurements_path, class: "dropdown-item" %></li>
+            <li><%= link_to tg("navbar.graphs"), graphs_path, class: "dropdown-item" %></li>
+            <li><%= link_to tg("navbar.icons"), attributions_path, class: "dropdown-item" %></li>
           </ul>
         </li>
       </ul>

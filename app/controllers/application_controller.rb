@@ -1,9 +1,21 @@
 class ApplicationController < ActionController::Base
-    before_action :require_https!
+    before_action :require_https!, :determine_favicon
     around_action :switch_locale
 
     def require_https!
         redirect_to :protocol => "https://" unless (request.ssl? || request.local? || Rails.env == "development" || Rails.env == "test")
+    end
+
+    def determine_favicon
+        last = Measurement.last
+        if last.precipitation_type == 60
+            @favicon = "rain"
+        elsif last.wind_speed > 7
+            @favicon = "wind"
+        else
+            @favicon = "cloudy_sun"
+        end
+        @favicon = "icons/#{@favicon}.png"
     end
 
     def switch_locale(&action)

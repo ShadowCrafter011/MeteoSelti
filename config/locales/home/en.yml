@@ -2,3 +2,6 @@ en:
   home:
     index:
       welcome: Welcome to MeteoSelti!
+      rain: Rain
+      today: Today
+      last_measurements: Last measurements

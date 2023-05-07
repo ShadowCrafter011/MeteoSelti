@@ -2,7 +2,30 @@ class HomeController < ApplicationController
   before_action -> { setup_locale "home" }
   
   def index
-    @last_measurement = Measurement.last
+    @precipitation = Measurement::added_value(Measurement::created_today, :precipitation).to_i
+    @precipitation_icon = @precipitation > 0 ? "icons/rain.png" : "icons/cloudy_sun.png"
+
+    last = Measurement.last
+
+    @temperature = last.air_temperature
+    @temperature_icon = @temperature > 0 ? "icons/thermometer_hot.png" : "icons/thermometer_cold.png"
+    @temperature_class = case
+    when @temperature > 30
+      "hot"
+    when @temperature < 0
+      "cold"
+    else
+      "normal"
+    end
+    
+    @humidity = last.relative_humidity
+    
+    @wind_direction = last.wind_direction_corrected
+    @wind_speed = last.wind_speed
+
+    @pressure = last.absolute_air_pressure
+
+    @measurements = Measurement.order(measured_at: :desc).limit(8)
   end
 
   def time_zone

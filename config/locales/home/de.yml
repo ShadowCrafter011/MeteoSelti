@@ -2,3 +2,7 @@ de:
   home:
     index:
       welcome: Wilkommen bei MeteoSelti!
+      rain: Regen
+      today: Heute
+      last_measurements: Letzte Messungen
+      

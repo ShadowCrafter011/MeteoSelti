@@ -2,3 +2,6 @@ fr:
   home:
     index:
       welcome: Bienvenue sur MeteoSelti!
+      rain: Pluie
+      today: Aujourd'hui
+      last_measurements: Dernières mesures

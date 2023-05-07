@@ -1,0 +1,15 @@
+<%= link_to measurement_path(measurement), class: "d-flex justify-content-between align-items-center border rounded mt-1 p-2 text-decoration-none text-black" do %>
+    <span class="fs-5"><%= convert_time(measurement.measured_at).strftime("%H:%M") %></span>
+
+    <% data = [
+        { icon: measurement.air_temperature > 0 ? "thermometer_hot" : "thermometer_cold", data: :air_temperature, unit: "°C" },
+        { icon: measurement.precipitation > 0 ? "rain" : "cloudy_sun", data: :precipitation, unit: "mm" },
+        { icon: "humidity", data: :relative_humidity, unit: "%" },
+        { icon: "wind", data: :wind_speed, unit: "m/s" }
+    ] %>
+
+    <% data.each do |item| %>
+        <%= render partial: "measurement_data", locals: { measurement: measurement, data: item } %>
+    <% end %>
+
+<% end %>
