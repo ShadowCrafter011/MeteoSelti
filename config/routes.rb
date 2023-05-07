@@ -37,4 +37,5 @@ Rails.application.routes.draw do
   get "graph/:measurement", to: "graph#show", as: "graph"
 
   get "language/:locale", to: "language#change", as: "language_change"
+  get "timezone", to: "home#time_zone"
 end
