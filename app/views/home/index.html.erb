@@ -11,14 +11,14 @@
         <div id="temperature" class="measurement" title="<%= tg "measurements.air_temperature" %>">
             <%= image_tag @temperature_icon, height: "140px" %>
             <h1 class="measurement-text <%= @temperature_class %>">
-                <%= @temperature.round(1) %>°C
+                <%= @temperature %>°C
             </h1>
         </div>
 
         <div id="humidity" class="measurement" title="<%= tg "measurements.relative_humidity" %>">
             <%= image_tag "icons/humidity.png", height: "130px" %>
             <h1 class="measurement-text">
-                <%= @humidity.round(1) %>%
+                <%= @humidity %>%
             </h1>
         </div>
 
@@ -28,14 +28,14 @@
                 <%= image_tag "icons/compass_inner.png", height: "50px", class: "compass-pointer", "data-compass-target": "pointer" %>
             </div>
             <h1 class="measurement-text" title="<%= tg "measurements.wind_speed" %>">
-                <%= @wind_speed.round(1) %>m/s
+                <%= @wind_speed %>m/s
             </h1>
         </div>
 
         <div id="pressure" class="measurement" title="<%= tg "measurements.absolute_air_pressure" %>">
             <%= image_tag "icons/barometer.png", height: "130px" %>
             <h1 class="measurement-text">
-                <%= @pressure.round(1) %>hPa
+                <%= @pressure %>hPa
             </h1>
         </div>
 

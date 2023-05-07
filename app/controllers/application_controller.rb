@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
     def determine_favicon
         last = Measurement.last
-        if last.precipitation_type == 60
+        if last.precipitation.round(1) > 0
             @favicon = "rain"
         elsif last.wind_speed > 7
             @favicon = "wind"
