@@ -1,9 +1,10 @@
 <div class="container my-5 title" style="max-width: 1000px">
     <h1 class="text-center">
-        <% if @measurement.measured_at.today? %>
-            <%= @measurement.measured_at.strftime("%H:%M") %>
+        <% time = convert_time @measurement.measured_at %>
+        <% if time.today? %>
+            <%= time.strftime("%H:%M") %>
         <% else %>
-            <%= @measurement.measured_at.strftime("%d %B %Y - %H:%M") %>
+            <%= time.strftime("%d %B %Y - %H:%M") %>
         <% end %>
     </h1>
     <div class="row">
