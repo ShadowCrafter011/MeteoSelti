@@ -38,6 +38,14 @@ class Measurement < ApplicationRecord
     def set_measured_at unix_timestamp
         self.measured_at = Time.at(unix_timestamp.to_f).to_datetime
     end
+
+    def round measurement
+        if self[measurement].present?
+            self[measurement].round(1)
+        else
+            0
+        end
+    end
     
     def get_errors
         errors = []
