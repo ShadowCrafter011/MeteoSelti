@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
     last = Measurement.last
 
-    @temperature = last.air_temperature.round(1)
+    @temperature = last.round(:air_temperature)
     @temperature_icon = @temperature > 0 ? "icons/thermometer_hot.png" : "icons/thermometer_cold.png"
     @temperature_class = case
     when @temperature > 30
@@ -18,12 +18,12 @@ class HomeController < ApplicationController
       "normal"
     end
     
-    @humidity = last.relative_humidity.round(1)
+    @humidity = last.round(:relative_humidity)
     
     @wind_direction = last.wind_direction_corrected
-    @wind_speed = last.wind_speed.round(1)
+    @wind_speed = last.round(:wind_speed)
 
-    @pressure = last.absolute_air_pressure.round(1)
+    @pressure = last.round(:absolute_air_pressure)
 
     @measurements = Measurement.order(measured_at: :desc).limit(8)
   end
