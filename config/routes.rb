@@ -9,7 +9,13 @@ Rails.application.routes.draw do
         post "image", to: "measurement#image"
       end
 
+      scope :retrieve do
+        get "images/:frame", to: "retrieve#images"
+      end
+
       scope :measurement do
+        get "count", to: "measurement#count"
+
         scope :last do
           get "at", to: "measurement#last_measured_at"
         end

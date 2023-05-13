@@ -37,6 +37,11 @@ class Api::MeasurementController < ApplicationController
     render json: Measurement.last(params[:amount]).to_json(except: :id)
   end
 
+  def count
+    count = Measurement.count
+    render json: {success: true, count: count, frames: (count.to_f / Measurement::API_RETRIEVE_COUNT).ceil}
+  end
+
   def all
     render json: Measurement.all.to_json(except: :id)
   end

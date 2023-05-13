@@ -34,6 +34,7 @@ class Measurement < ApplicationRecord
     ]
 
     FRAME_COLUMNS = 15
+    API_RETRIEVE_COUNT = 1000
 
     def set_measured_at unix_timestamp
         self.measured_at = Time.at(unix_timestamp.to_f).to_datetime
