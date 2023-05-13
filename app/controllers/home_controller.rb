@@ -1,8 +1,11 @@
 class HomeController < ApplicationController
   before_action -> { setup_locale "home" }
   
-  def index
-    @precipitation = Measurement::added_value(Measurement::created_today, :precipitation).to_i
+  def index; end
+
+  def data_frame
+    @precipitation_float= Measurement::added_value Measurement::created_today, :precipitation
+    @precipitation = @precipitation_float.to_i
     @precipitation_icon = @precipitation > 0 ? "icons/rain.png" : "icons/cloudy_sun.png"
 
     last = Measurement.last

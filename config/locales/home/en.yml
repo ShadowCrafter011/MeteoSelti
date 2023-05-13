@@ -1,6 +1,6 @@
 en:
   home:
-    index:
+    data_frame:
       welcome: Welcome to MeteoSelti!
       rain: Rain
       today: Today

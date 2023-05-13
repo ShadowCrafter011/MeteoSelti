@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "home#index"
+  get "index_data", to: "home#data_frame", as: "data_frame"
 
   defaults format: :json do
     namespace :api do

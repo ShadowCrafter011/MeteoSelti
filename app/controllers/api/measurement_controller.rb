@@ -15,7 +15,8 @@ class Api::MeasurementController < ApplicationController
         action: "new",
         id: measurement.id,
         total: Measurement.count,
-        per_frame: Measurement::FRAME_COLUMNS * 3
+        per_frame: Measurement::FRAME_COLUMNS * 3,
+        data: measurement
       })
 
     else
