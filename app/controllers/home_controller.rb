@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_action -> { setup_locale "home" }
+  layout false, only: :data_frame
   
   def index; end
 

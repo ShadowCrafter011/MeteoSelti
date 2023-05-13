@@ -1,4 +1,4 @@
-<%= link_to measurement_path(measurement), class: "d-flex justify-content-between align-items-center border rounded mt-1 p-2 text-decoration-none text-black" do %>
+<%= link_to measurement_path(measurement), target: "_top", class: "d-flex justify-content-between align-items-center border rounded mt-1 p-2 text-decoration-none text-black" do %>
     <span class="fs-5"><%= convert_time(measurement.measured_at).strftime("%H:%M") %></span>
 
     <% data = [
