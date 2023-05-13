@@ -5,7 +5,7 @@
             <% next unless m.sky_capture.attached? %>
             "<%= m.id %>": {
                 "timestamp": <%= m.measured_at.to_i %>,
-                "url": <%= url_for m.sky_capture %>
+                "url": "<%= url_for m.sky_capture %>"
             }<%= "," unless i >= @measurements.length - 1 %>
         <% end %>
     }
