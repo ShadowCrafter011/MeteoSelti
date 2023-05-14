@@ -3,10 +3,10 @@
         <div class="row">
             <% for x in 0..2 do %>
                 <% unless (index = y * 3 + x) >= @measurements.length %>
-                    <div class="col-4">
+                    <div class="col-4 p-1">
                         <% current = @measurements[index] %>
                         <% time = convert_time current.measured_at %>
-                        <%= link_to measurement_path(current), id: index + @offset, class: "link-card" do %>
+                        <%= link_to measurement_path(current), id: index + @offset, class: "d-block bg-light border mt-1 p-2 border rounded w-100 text-decoration-none text-black" do %>
                             <% if time.today? %>
                                 <%= time.strftime("%H:%M") %>
                             <% else %>

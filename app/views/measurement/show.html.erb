@@ -1,4 +1,4 @@
-<div class="container my-5 title" style="max-width: 1000px">
+<div class="container my-4" style="max-width: 1000px">
     <h1 class="text-center">
         <% time = convert_time @measurement.measured_at %>
         <% if time.today? %>
@@ -10,7 +10,7 @@
     <div class="row">
         <% for y in 0..2 do %>
             <div class="col-md-4">
-                <table class="table blue-text">
+                <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">Measurement</th>

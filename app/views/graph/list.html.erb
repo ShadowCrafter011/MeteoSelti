@@ -1,14 +1,14 @@
 <div class="container text-center">
-    <h1 class="title my-4"><%= tp "graphs" %></h1>
+    <h1 class="my-4"><%= tp "graphs" %></h1>
     <% for y in 0..@rows do %>
         <div class="row">
             <% for x in 0..3 do %>
                 <% index = y * 4 + x %>
                 <% next if index >= Measurement::MEASUREMENT_KEYS.length %>
                 <% key = Measurement::MEASUREMENT_KEYS[index] %>
-                <div class="col-md-3">
-                    <%= link_to graph_path(measurement: key), class: "link-card" do %>
-                        <h3 class="text-truncate" title="<%= Measurement::measurement_name key %>" ><%= Measurement::measurement_name key %></h3>
+                <div class="col-md-3 p-1">
+                    <%= link_to graph_path(measurement: key), class: "d-block bg-light border mt-1 p-2 border rounded w-100 text-decoration-none text-black" do %>
+                        <h3 class="text-truncate p-1" title="<%= Measurement::measurement_name key %>" ><%= Measurement::measurement_name key %></h3>
                         <%= line_chart Measurement::data_for(Measurement::created_at_most(24.hours.ago), key), points: false, height: "250px" %>
                     <% end %>
                 </div>

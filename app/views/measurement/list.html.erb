@@ -1,5 +1,5 @@
 <div class="container text-center" style="max-width: 1000px">
-    <h1 class="mt-4 title"><%= tp "measurements" %></h1>
+    <h1 class="my-4"><%= tp "measurements" %></h1>
     <div id="measurements" data-controller="measurement">
         <% for frame in 0..@frames - 1 do %>
             <%= render partial: "list_frame", locals: { frame: frame } %>
