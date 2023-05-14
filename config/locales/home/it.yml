@@ -1,6 +1,6 @@
 it:
   home:
-    inddata_frameex:
+    data_frame:
       welcome: Benvenuti a MeteoSelti!
       rain: Pioggia
       today: Oggi

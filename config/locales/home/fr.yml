@@ -1,6 +1,6 @@
 fr:
   home:
-    indata_framedex:
+    data_frame:
       welcome: Bienvenue sur MeteoSelti!
       rain: Pluie
       today: Aujourd'hui
