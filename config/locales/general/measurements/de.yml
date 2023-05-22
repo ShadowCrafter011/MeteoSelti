@@ -24,6 +24,12 @@ de:
       precipitation_intensity: Niederschlagsstärke
       precipitation_type: Niederschlagstyp
       rain_drop_volume: Volumen Regentropfen
+      cloud_status: Wolkenbedeckung
+      cloud_status_certainty: Wolkenbedeckungs Sicherheitswert
       wind_sensor_heating: Heizung Windsensor
       precipitation_sensor_heating: Heizung Regenradar
       supply_voltage: Versorgungsspannung
+    cloud_status:
+      sunny: Sonnig
+      cloudy: Bedeckt
+      between: Sonnit mit Wolken

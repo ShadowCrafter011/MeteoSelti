@@ -1,29 +1,35 @@
 fr:
   general:
     measurements:
-      air_temperature: Température de l'air
-      dewpoint_temperature: Température du point de rosée
-      wet_bulb_temperature: Température de bulbe humide
-      wind_chill_temperature: Température de refroidissement éolien
-      relative_humidity: Humidité relative
-      absolute_humidity: Humidité absolue
-      humidity_mixing_ratio: Humidité Rapport de mélange
-      relative_air_pressure: Pression atmosphérique relative
-      absolute_air_pressure: Pression atmosphérique absolue
-      air_density: Densité de l'air
-      specific_enthalpy: Enthalpie spécifique
+      air_temperature: TempÃƒÂ©rature de l'air
+      dewpoint_temperature: TempÃƒÂ©rature du point de rosÃƒÂ©e
+      wet_bulb_temperature: TempÃƒÂ©rature de bulbe humide
+      wind_chill_temperature: TempÃƒÂ©rature de refroidissement ÃƒÂ©olien
+      relative_humidity: HumiditÃƒÂ© relative
+      absolute_humidity: HumiditÃƒÂ© absolue
+      humidity_mixing_ratio: HumiditÃƒÂ© Rapport de mÃƒÂ©lange
+      relative_air_pressure: Pression atmosphÃƒÂ©rique relative
+      absolute_air_pressure: Pression atmosphÃƒÂ©rique absolue
+      air_density: DensitÃƒÂ© de l'air
+      specific_enthalpy: Enthalpie spÃƒÂ©cifique
       wind_speed: Vitesse du vent
       max_wind_speed: Vitesse maximale du vent
       wind_direction: Direction du vent
       max_wind_direction: Direction du vent pour la vitesse maximale du vent
-      wind_direction_corrected: Direction du vent corrigée
-      wind_direction_standard_deviation: Écart-type de la direction du vent
-      wind_value_quality: Qualité des mesures de vent
+      wind_direction_corrected: Direction du vent corrigÃƒÂ©e
+      wind_direction_standard_deviation: Ãƒâ€°cart-type de la direction du vent
+      wind_value_quality: QualitÃƒÂ© des mesures de vent
       compass_heading: Orientation de la boussole
-      precipitation: Précipitations
-      precipitation_intensity: Intensité des précipitations
-      precipitation_type: Type de précipitations
+      precipitation: PrÃƒÂ©cipitations
+      precipitation_intensity: IntensitÃƒÂ© des prÃƒÂ©cipitations
+      precipitation_type: Type de prÃƒÂ©cipitations
       rain_drop_volume: Volume des gouttes de pluie
       wind_sensor_heating: Chauffage Capteur de vent
       precipitation_sensor_heating: Chauffage Radar de pluie
       supply_voltage: Tension d'alimentation
+      cloud_status: Couverture nuageuse
+      cloud_status_certainty: SecuritÃ© de la valeur de couverture nuageuse
+    cloud_status:
+      sunny: Ensoleillé
+      cloudy: Couvert
+      between: Soleil avec nuages

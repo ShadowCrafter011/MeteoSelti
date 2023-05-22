@@ -27,3 +27,9 @@ en:
       wind_sensor_heating: Heating wind sensor
       precipitation_sensor_heating: Heating rain radar
       supply_voltage: Supply voltage
+      cloud_status: Cloud cover
+      cloud_status_certainty: Cloud cover certainty
+    cloud_status:
+      sunny: Sunny
+      cloudy: Cloudy
+      between: Sonny with clouds
