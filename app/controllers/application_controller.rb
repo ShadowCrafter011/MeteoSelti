@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
         else
             @favicon = "cloudy_sun"
         end
-        @favicon = "icons/#{@favicon}"
+        @favicon = "icons/#{@favicon}.png"
     end
 
     def switch_locale(&action)
