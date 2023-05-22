@@ -26,7 +26,11 @@
                                 <td title="<%= name %>"><%= name %></td>
                                 <% key = Measurement::MEASUREMENT_KEYS[index] %>
                                 <% if key == :cloud_status %>
-                                    <td><%= tg "cloud_status.#{@measurement.cloud_status}" %></td>
+                                    <% if @measurement.cloud_status.present? %>
+                                        <td><%= tg "cloud_status.#{@measurement.cloud_status}" %></td>
+                                    <% else %>
+                                        <td>N/D</td>
+                                    <% end %>
                                 <% else %>
                                     <td><%= @measurement.round(key, "NaN") %></td>
                                 <% end %>
