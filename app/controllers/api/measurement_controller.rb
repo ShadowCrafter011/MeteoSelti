@@ -27,6 +27,7 @@ class Api::MeasurementController < ApplicationController
   def image
     measurement = Measurement.find params[:id]
     if measurement.sky_capture.attach params[:sky_capture]
+      measurement.update cloud_status_params.except(:id)
       render json: {success: true, message: "Sky capture attached to measurement #{params[:id]}"}, status: :accepted
     else
       render json: {success: false, message: "Could not attach sky capture to measurement #{params[:id]}", errors: measurement.get_errors}, code: :bad_request
@@ -61,5 +62,9 @@ class Api::MeasurementController < ApplicationController
   private
   def measurement_params
     params.require(:measurement).permit(:measured_at, :sky_capture, Measurement::MEASUREMENT_KEYS)
+  end
+
+  def cloud_status_params
+    params.require(:measurement).permit(:cloud_status, :cloud_status_certainty)
   end
 end
