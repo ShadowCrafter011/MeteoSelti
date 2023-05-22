@@ -4,7 +4,7 @@ class Measurement < ApplicationRecord
     has_one_attached :sky_capture
 
     # 26 total measurements
-    MEASUREMENT_KEYS = [
+    GRAPH_MEASUREMENT_KEYS = [
         :air_temperature, 
         :dewpoint_temperature, 
         :wet_bulb_temperature, 
@@ -33,6 +33,12 @@ class Measurement < ApplicationRecord
         :supply_voltage
     ]
 
+    # 28 total measurements
+    MEASUREMENT_KEYS = GRAPH_MEASUREMENT_KEYS.clone.append(
+        :cloud_status,
+        :cloud_status_certainty
+    )
+
     FRAME_COLUMNS = 15
     API_RETRIEVE_COUNT = 1000
 
@@ -40,12 +46,14 @@ class Measurement < ApplicationRecord
         self.measured_at = Time.at(unix_timestamp.to_f).to_datetime
     end
 
-    def round measurement
-        if self[measurement].present?
-            self[measurement].round(1)
+    def round measurement, default=0
+        if (data = self[measurement]).is_a? Float
+            data.round(1)
+        elsif data.is_a?(Integer) || data.is_a?(String)
+            data
         else
-            0
-        end
+            default
+        end 
     end
     
     def get_errors
@@ -62,6 +70,17 @@ class Measurement < ApplicationRecord
 
     def self.created_today
         Measurement.where("measured_at >= ?", Time.now.beginning_of_day)
+    end
+
+    def self.cloud_status
+        offset = 1
+        status = Measurement.last.cloud_status
+        while status == nil
+            measurement = Measurement.order(measured_at: :desc).limit(1).offset(offset)
+            status = measurement.cloud_status
+            offset += 1
+        end
+        return status
     end
 
     def self.data_for measurements=Measurement.all, measurement

@@ -40,6 +40,18 @@ class AttributionsController < ApplicationController
                 href: "https://www.flaticon.com/free-icons/pressure"
             },
             {
+                iconset: "Cloud icons",
+                author: "Freepik",
+                link: "Cloud icons created by Freepik - Flaticon",
+                href: "https://www.flaticon.com/free-icons/cloud"
+            },
+            {
+                iconset: "Rain icons",
+                author: "Freepik",
+                link: "Rain icons created by Freepik - Flaticon",
+                href: "https://www.flaticon.com/free-icons/rain"
+            },
+            {
                 iconset: "Rain icons",
                 author: "Umeicon",
                 link: "Rain icons created by Umeicon - Flaticon",

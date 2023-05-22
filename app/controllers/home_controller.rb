@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   def data_frame
     @precipitation_float= Measurement::added_value Measurement::created_today, :precipitation
     @precipitation = @precipitation_float.to_i
-    @precipitation_icon = @precipitation > 0 ? "icons/rain.png" : "icons/cloudy_sun.png"
+    @precipitation_icon = @favicon
 
     last = Measurement.last
 
