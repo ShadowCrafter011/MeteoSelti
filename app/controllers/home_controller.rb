@@ -35,7 +35,7 @@ class HomeController < ApplicationController
   def time_zone
     return_to = url_from(params[:p]) || root_path
     session["time_zone"] = params[:t]
-    cookies["locale"] = params[:l].split("-")[0] unless cookies["locale"].present?
+    cookies["locale"] = { value: params[:l].split("-")[0], expires: 20.years.from_now } unless cookies["locale"].present?
     redirect_to return_to
   end
 end
