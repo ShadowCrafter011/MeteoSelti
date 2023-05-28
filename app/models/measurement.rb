@@ -75,8 +75,8 @@ class Measurement < ApplicationRecord
     def self.cloud_status
         offset = 1
         status = Measurement.last.cloud_status
-        while status == nil
-            measurement = Measurement.order(measured_at: :desc).limit(1).offset(offset)
+        while status == nil && offset < 10
+            measurement = Measurement.order(measured_at: :desc).limit(1).offset(offset).first
             status = measurement.cloud_status
             offset += 1
         end
