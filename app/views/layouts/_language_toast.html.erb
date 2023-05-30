@@ -30,7 +30,7 @@
                     <% languages.each do |name, data| %>
                         <a class="col-md-3 text-center" href="<%= data[:href] %>">
                             <h3><%= tg("languages.#{name}") %></h3>
-                            <%= image_tag "flags/#{data[:flag]}", class: "flag-image", width: "180px", loading: "lazy" %>
+                            <%= image_tag "flags/#{data[:flag]}", class: "flag-image", width: "180px", loading: "lazy", draggable: "false" %>
                         </a>
                     <% end %>
                 </div>
