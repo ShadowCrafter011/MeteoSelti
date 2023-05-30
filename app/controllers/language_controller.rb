@@ -14,7 +14,7 @@ class LanguageController < ApplicationController
 
     if params[:t].present? && params[:l].present?
       session[:time_zone] = params[:t]
-      session[:locale] = params[:l]
+      session[:locale] = params[:l].split("-")[0]
 
       return_to = url_from(params[:p]) || root_path
       redirect_to return_to
