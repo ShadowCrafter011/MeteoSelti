@@ -16,9 +16,8 @@
   </head>
 
   <body id="<%= controller_name %>-<%= action_name %>" data-controller="feather">
-    <%= render partial: "layouts/navbar" %>
+    <%= render partial: "layouts/navbar" unless @no_navbar %>
     <%= render partial: "layouts/language_toast" %>
-    <%= render partial: "layouts/time_zone" %>
 
     <%= yield %>
   </body>

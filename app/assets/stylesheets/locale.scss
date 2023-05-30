@@ -1,0 +1,17 @@
+#language-locale {
+    .locale-container {
+        @media only screen and (min-height: 500px) {
+            height: 70vh;
+        }
+
+        @media only screen and (max-height: 500px) {
+            height: 100vh;
+        }
+
+        .spinner-border {
+            $size: 5rem;
+            height: $size;
+            width: $size;
+        }
+    }
+}

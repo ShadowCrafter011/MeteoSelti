@@ -31,13 +31,4 @@ class HomeController < ApplicationController
 
     @measurements = Measurement.order(measured_at: :desc).limit(8)
   end
-
-  def time_zone
-    return_to = url_from(params[:p]) || root_path
-    session["time_zone"] = params[:t]
-    unless cookies["locale"].present?
-      cookies["locale"] = { value: params[:l].split("-")[0], expires: 20.years.from_now }
-    end
-    redirect_to return_to
-  end
 end

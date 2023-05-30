@@ -46,5 +46,5 @@ Rails.application.routes.draw do
   get "attributions", to: "attributions#index", as: "attributions"
 
   get "language/:locale", to: "language#change", as: "language_change"
-  get "timezone", to: "home#time_zone"
+  get "setup", to: "language#locale", as: "locale"
 end
