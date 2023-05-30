@@ -1,6 +1,16 @@
 namespace :measurements do
+  desc "Destroy and repopulate measurements"
+  task repopulate: [:disallow_production!, :destroy, :populate]
+
+  desc "Require development environment"
+  task disallow_production!: :environment do
+    raise "Action is not allowed in production" if Rails.env == "production"
+  end
+
   desc "Populate database with measurements from the production environment"
   task populate: :environment do
+    Rake::Task["measurements:disallow_production!"].invoke
+
     response = HTTParty.get(
       "https://api.meteoselti.ch/api/measurements",
       headers: {
@@ -52,7 +62,7 @@ namespace :measurements do
 
   desc "Destroy all measurements. DO NOT USE IN PRODUCTION!"
   task destroy: :environment do
-    raise "Action not allowed in production" if Rails.env == "production"
+    Rake::Task["measurements:disallow_production!"].invoke
 
     Measurement.all.each do |m|
       m.destroy
