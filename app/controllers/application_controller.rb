@@ -12,20 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def determine_favicon
-        last = Measurement.last
-        raining = last.round(:precipitation) > 0
-        
-        case Measurement::cloud_status
-        when "cloudy"
-            @favicon = raining ? "rain" : "clouds"
-        when "sunny"
-            @favicon = raining ? "rain_sun" : "sun"
-        when "between"
-            @favicon = raining ? "rain_sun" : "cloudy_sun"
-        else
-            @favicon = "cloudy_sun"
-        end
-        @favicon = "icons/#{@favicon}.png"
+        @favicon = Measurement.last.icon
     end
 
     def switch_locale(&action)

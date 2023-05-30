@@ -55,6 +55,22 @@ class Measurement < ApplicationRecord
             default
         end 
     end
+
+    def icon
+        raining = self.round(:precipitation) > 0
+
+        case self.cloud_status
+        when "cloudy"
+            icon = raining ? "rain" : "clouds"
+        when "sunny"
+            icon = raining ? "rain_sun" : "sun"
+        when "between"
+            icon = raining ? "rain_sun" : "cloudy_sun"
+        else
+            icon = "cloudy_sun"
+        end
+        "icons/#{icon}.png"
+    end
     
     def get_errors
         errors = []
@@ -70,17 +86,6 @@ class Measurement < ApplicationRecord
 
     def self.created_today
         Measurement.where("measured_at >= ?", Time.now.beginning_of_day)
-    end
-
-    def self.cloud_status
-        offset = 1
-        status = Measurement.last.cloud_status
-        while status == nil && offset < 10
-            measurement = Measurement.order(measured_at: :desc).limit(1).offset(offset).first
-            status = measurement.cloud_status
-            offset += 1
-        end
-        return status
     end
 
     def self.data_for measurements=Measurement.all, measurement
