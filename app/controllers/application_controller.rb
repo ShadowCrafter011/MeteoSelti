@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
 
     def determine_favicon
-        @favicon = Measurement.last.icon
+        @favicon = "icons/#{Measurement.last.icon}.png"
     end
 
     def switch_locale(&action)

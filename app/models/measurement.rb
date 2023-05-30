@@ -61,15 +61,14 @@ class Measurement < ApplicationRecord
 
         case self.cloud_status
         when "cloudy"
-            icon = raining ? "rain" : "clouds"
+            raining ? "rain" : "clouds"
         when "sunny"
-            icon = raining ? "rain_sun" : "sun"
+            raining ? "rain_sun" : "sun"
         when "between"
-            icon = raining ? "rain_sun" : "cloudy_sun"
+            raining ? "rain_sun" : "cloudy_sun"
         else
-            icon = "cloudy_sun"
+            "cloudy_sun"
         end
-        "icons/#{icon}.png"
     end
     
     def get_errors
