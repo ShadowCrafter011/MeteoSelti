@@ -3,6 +3,7 @@ class Api::RetrieveController < ApplicationController
   
     protect_from_forgery with: :null_session
     before_action :validate_bearer_token!
+    skip_before_action :determine_favicon
     
     def images
         per_frame = Measurement::API_RETRIEVE_COUNT
