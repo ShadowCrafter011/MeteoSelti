@@ -4,7 +4,7 @@ class Api::MeasurementController < ApplicationController
   
   protect_from_forgery with: :null_session
   before_action :validate_bearer_token!
-  skip_before_action :determine_favicon
+  skip_before_action :determine_favicon, :check_locale
 
   def create
     measurement = Measurement.new measurement_params.except(:measured_at)
