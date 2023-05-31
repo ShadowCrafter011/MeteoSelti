@@ -14,7 +14,7 @@
                 'pressure pressure . .';
 
             grid-template-columns: 22% 22% auto auto;
-            grid-template-rows: 180px 180px 180px 180px 180px;
+            grid-template-rows: repeat(5, 180px);
         }
 
         @media only screen and (max-width: 1000px) {
@@ -29,7 +29,22 @@
                 'measurements measurements';
 
             grid-template-columns: auto auto;
-            grid-template-rows: 180px 180px 180px 180px 180px;
+            grid-template-rows: repeat(5, 180px);
+        }
+
+        @media only screen and (max-width: 550px) {
+            grid-template:
+                'precipitation'
+                'temperature'
+                'humidity'
+                'wind'
+                'pressure'
+                'measurements'
+                'measurements'
+                'measurements';
+
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(5, 90px);
         }
     }
 
@@ -39,6 +54,19 @@
 
         @media only screen and (max-width: 1000px) {
             justify-content: center;
+        }
+
+        @media only screen and (max-width: 550px) {
+            justify-content: start;
+
+            h1 {
+                margin: 0;
+                font-size: 32px;
+            }
+
+            .measurement-image {
+                transform: scale(0.5);
+            }
         }
     }
 
