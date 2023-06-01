@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center">
+<div class="d-flex align-items-center <%= "measurement-data-#{index}" %>">
     <%= image_tag "icons/#{data[:icon]}.png", height: "30px" %>
     <span class="fs-5 ms-1"><%= measurement.round(data[:data]) %><%= data[:unit] %></span>
 </div>

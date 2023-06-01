@@ -57,7 +57,7 @@
         }
 
         @media only screen and (max-width: 550px) {
-            justify-content: start;
+            justify-content: center;
 
             h1 {
                 margin: 0;
@@ -67,6 +67,34 @@
             .measurement-image {
                 transform: scale(0.5);
             }
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        .measurement-data-3 {
+            display: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 440px) {
+        .measurement-data-2 {
+            display: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 315px) {
+        .measurement-data-1 {
+            display: none !important;
+        }
+
+        .sun-icon {
+            display: block !important;
+        }
+    }
+
+    @media only screen and (max-width: 250px) {
+        .measurement-data-0 {
+            display: none !important;
         }
     }
 
