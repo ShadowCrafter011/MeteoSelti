@@ -1,0 +1,157 @@
+#home-index {
+    .contents {
+        display: grid;
+        gap: 10px 10px;
+
+        margin: 20px;
+        
+        @media only screen and (min-width: 1000px) {
+            grid-template: 
+                'precipitation precipitation measurements measurements'
+                'temperature temperature measurements measurements'
+                'humidity humidity measurements measurements'
+                'wind wind . .'
+                'pressure pressure . .';
+
+            grid-template-columns: 22% 22% auto auto;
+            grid-template-rows: repeat(5, 180px);
+        }
+
+        @media only screen and (max-width: 1000px) {
+            grid-template:
+                'precipitation precipitation'
+                'temperature temperature'
+                'humidity humidity'
+                'wind wind'
+                'pressure pressure'
+                'measurements measurements'
+                'measurements measurements'
+                'measurements measurements';
+
+            grid-template-columns: auto auto;
+            grid-template-rows: repeat(5, 180px);
+        }
+
+        @media only screen and (max-width: 550px) {
+            grid-template:
+                'precipitation'
+                'temperature'
+                'humidity'
+                'wind'
+                'pressure'
+                'measurements'
+                'measurements'
+                'measurements';
+
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(5, 90px);
+        }
+    }
+
+    .measurement {
+        display: flex;
+        align-items: center;
+
+        @media only screen and (max-width: 1000px) {
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 550px) {
+            justify-content: center;
+
+            h1 {
+                margin: 0;
+                font-size: 32px;
+            }
+
+            .measurement-image {
+                transform: scale(0.5);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 550px) {
+        .measurement-data-3 {
+            display: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 440px) {
+        .measurement-data-2 {
+            display: none !important;
+        }
+    }
+
+    @media only screen and (max-width: 315px) {
+        .measurement-data-1 {
+            display: none !important;
+        }
+
+        .sun-icon {
+            display: block !important;
+        }
+    }
+
+    @media only screen and (max-width: 250px) {
+        .measurement-data-0 {
+            display: none !important;
+        }
+    }
+
+    #last-measurements {
+        grid-area: measurements;
+    }
+
+    #precipitation {
+        grid-area: precipitation;
+    }
+
+    #temperature {
+        grid-area: temperature;
+    }
+
+    #wind {
+        grid-area: wind;
+    }
+
+    #humidity {
+        grid-area: humidity;
+    }
+
+    #pressure {
+        grid-area: pressure;
+    }
+
+    .compass-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .compass-pointer {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .measurement-text {
+        font-size: 5rem;
+        margin-left: 30px;
+    }
+
+    .precipitation-amount {
+        color: royalblue;
+    }
+
+    .normal {
+        color: teal;
+    }
+
+    .hot {
+        color: darkred;
+    }
+
+    .cold {
+        color: lightskyblue;
+    }
+}

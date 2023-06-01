@@ -8,8 +8,10 @@
         { icon: "wind", data: :wind_speed, unit: "m/s" }
     ] %>
 
-    <% data.each do |item| %>
-        <%= render partial: "measurement_data", locals: { measurement: measurement, data: item } %>
+    <%= image_tag "icons/#{measurement.icon}.png", class: "sun-icon d-none", height: "30px" %>
+
+    <% data.each_with_index do |item, i| %>
+        <%= render partial: "measurement_data", locals: { measurement: measurement, index: i, data: item } %>
     <% end %>
 
 <% end %>
