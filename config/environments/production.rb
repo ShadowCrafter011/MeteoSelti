@@ -5,6 +5,7 @@ Rails.application.configure do
 
   config.hosts << "meteoselti.ch"
   config.hosts << "www.meteoselti.ch"
+  config.hosts << "api.meteoselti.ch"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
