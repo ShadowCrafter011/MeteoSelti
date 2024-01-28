@@ -14,7 +14,7 @@ namespace :measurements do
     response = HTTParty.get(
       "https://api.meteoselti.ch/api/measurements",
       headers: {
-        Authorization: ENV["BEARER_TOKEN"]
+        Authorization: Rails.application.credentials[:bearer_token]
       }
     )
     

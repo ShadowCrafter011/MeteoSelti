@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_191152) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_28_165921) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -74,6 +74,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_191152) do
     t.float "max_wind_direction"
     t.string "cloud_status"
     t.float "cloud_status_certainty"
+    t.float "load"
+    t.float "grid"
+    t.float "pv"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

@@ -30,7 +30,10 @@ class Measurement < ApplicationRecord
         :rain_drop_volume,
         :wind_sensor_heating,
         :precipitation_sensor_heating,
-        :supply_voltage
+        :supply_voltage,
+        :load,
+        :grid,
+        :pv
     ]
 
     # 28 total measurements

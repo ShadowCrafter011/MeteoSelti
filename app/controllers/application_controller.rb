@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
-    before_action :require_https!, :check_locale, :determine_favicon
+    before_action :check_locale, :determine_favicon
     around_action :switch_locale
-
-    def require_https!
-        redirect_to :protocol => "https://" unless (request.ssl? || request.local? || Rails.env == "development" || Rails.env == "test")
-    end
 
     def check_locale
         return if session[:locale].present? && session[:time_zone].present?
