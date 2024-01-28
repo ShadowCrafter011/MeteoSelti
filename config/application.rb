@@ -13,8 +13,6 @@ module MeteoSelti
 
     config.autoload_paths += %W(#{config.root}/lib)
 
-    config.hosts << "meteoselti.ch"
-
     config.force_ssl = true
     config.assume_ssl = true
 
